@@ -3,4 +3,4 @@
 <img width="2560" height="1080" alt="image" src="https://github.com/user-attachments/assets/9d915cc1-a6cd-4012-8fa2-bd3f5c627689" />
 
 
-Uses most of the dots from my other hyprland dotfiles, this just changes the hyprland and waybar configs.
+Uses most of the dots from my other hyprland dotfiles, this just changes the hyprland, rofi and waybar configs.
