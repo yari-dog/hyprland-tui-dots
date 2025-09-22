@@ -11,6 +11,7 @@
 /*****----- Configuration -----*****/
 configuration {
 	modi:                       "drun";
+    display-drun:               ":kao";
     show-icons:                 false;
 	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
 	window-format:              "{w} · {c} · {t}";
