@@ -1,0 +1,166 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "margin-left": 15,
+    "margin-bottom": 15,
+    "margin-right": 15,
+    "margin-top": 0,
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window",
+        "cava"
+    ],
+    "modules-center": [
+    ],
+    "modules-right": [
+        "tray",
+        "pulseaudio",
+        "pulseaudio#microphone",
+        "custom/updates",
+        "idle_inhibitor",
+        "custom/power",
+        "clock"
+    ],
+    "hyprland/window": {
+        "format": "{}"
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "show-special": true,
+        "on-scroll-up": "hyprctl dispatch workspace m-1",
+        "on-scroll-down": "hyprctl dispatch workspace m+1",
+        "on-click": "activate",
+        "sort-by-number": true
+    },
+    "custom/updates": {
+        "format": "󰚰 {}",
+        "interval": 300, // every 5 min
+        "exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'", // # of updates and tooltip details
+        "exec-if": "exit 0", // always run; consider advanced run conditions
+        "on-click": "foot -e yay -Syu", // update system
+        "signal": 8
+    },
+    "idle_inhibitor": {
+        "tooltip": false,
+        "format": "{icon}",
+        "start-activated": false,
+        "format-icons": {
+            "activated": " ",
+            "deactivated": " "
+        }
+    },
+    "custom/weather": {
+        "tooltip": true,
+        "format": "{}",
+        "interval": 30,
+        "exec": "~/.config/waybar/scripts/waybar-wttr.py",
+        "return-type": "json"
+    },
+    "tray": {
+        "icon-size": 12,
+        "spacing": 10
+    },
+    "clock": {
+        "timezone": "Europe/London",
+        "format": "{:%d/%m %R}",
+        "tooltip-format": "<span><tt>{calendar}</tt></span>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "format": {
+                "months": "<span color='#504945'><b>{}</b></span>",
+                "days": "<span color='#ebdbb2'><b>{}</b></span>",
+                "weeks": "<span color='#928374'><b>W{}</b></span>",
+                "weekdays": "<span color='#7c6f64'><b>{}</b></span>",
+                "today": "<span color='#d79921'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "~/.config/rofi/menu/powermenu.sh"
+    },
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "tooltip": false,
+        "format-muted": " Muted",
+        "on-click": "pamixer -t",
+        "on-scroll-up": "pamixer -i 2",
+        "on-scroll-down": "pamixer -d 2",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        }
+    },
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": " {volume}%  ",
+        "tooltip": false,
+        "format-source-muted": " Muted",
+        "on-click": "pamixer --default-source -t",
+        "on-scroll-up": "pamixer --default-source -i 2",
+        "on-scroll-down": "pamixer --default-source -d 2",
+        "scroll-step": 5
+    },
+    "cava": {
+        "framerate": 40,
+        "autosens": 0,
+        "sensitivity": 38,
+        "bars": 18,
+        "lower_cutoff_freq": 50,
+        "higher_cutoff_freq": 12000,
+        "method": "pulse",
+        "hide_on_silence": false,
+        "sleep_timer": 5,
+        "source": "auto",
+        "stereo": false,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": false,
+        "noise_reduction": 0.77,
+        "input_delay": 0,
+        "format-icons": [
+            "▁",
+            "▂",
+            "▃",
+            "▄",
+            "▅",
+            "▆",
+            "▇",
+            "█"
+        ],
+        "actions": {
+            "on-click-right": "mode"
+        }
+    },
+    "battery": {
+        "bat": "hidpp_battery_0",
+        "interval": 1800,
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "max-length": 25
+    }
+}

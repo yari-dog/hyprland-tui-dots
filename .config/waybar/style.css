@@ -1,0 +1,116 @@
+@define-color fg #ebdbb2;
+@define-color base-bg #282828;
+@define-color bg #32302f;
+@define-color bg-2 #504945;
+
+* {
+  border: none;
+  font-family: Sarasa Term J Nerd Font;
+  /* font-weight: 500; */
+  font-size: 17px;
+  border: none;
+  border-radius: 0px;
+  margin: 0;
+  padding: 0px 0px;
+}
+
+/* The whole bar */
+#waybar {
+  font-weight: 500;
+  border-radius: 0px;
+  margin: 0px;
+  background-color: @bg;
+}
+
+tooltip {
+  background: @bg-2;
+  color: @fg;
+}
+
+#language,
+#clock,
+#battery,
+#tray,
+#keyboard-state,
+#idle_inhibitor {
+  padding: 5px;
+  margin: 0px;
+}
+#pulseaudio {
+  padding-left: 15px;
+}
+#cava {
+  padding: 5px 15px;
+}
+#custom-updates {
+  padding-right: 15px;
+}
+
+#custom-power {
+  padding-right: 20px;
+  background-color: @bg-2;
+}
+#idle_inhibitor {
+  padding-left: 15px;
+  padding-right: 10px;
+  background-color: @bg-2;
+}
+
+#clock {
+  background-color: @fg;
+  color: @bg;
+  font-weight: bold;
+  padding: 0px 15px;
+}
+
+#window {
+  background-color: @bg-2;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#workspaces {
+  padding: 0px;
+}
+
+#workspaces button {
+  border-radius: 0px;
+  padding: 0px 5px;
+  color: @fg;
+  background-color: @bg-2;
+  font-weight: bold;
+  background-color: @fg;
+  color: @base-bg;
+  text-shadow: inherit;
+}
+
+#workspaces button.visible {
+}
+
+#workspaces button.active {
+  background: #8ec07c;
+}
+
+#workspaces button.active:hover {
+  background: #689d6a;
+}
+
+#workspaces button:hover {
+  background: #665c54;
+}
+
+#workspaces button.urgent {
+  background-color: #d65d0e;
+}
+
+#workspaces button.persistent {
+  color: #928374;
+}
+
+#workspaces button.empty {
+  color: #504945;
+}
+
+#workspaces button.special {
+  color: #b8bb26;
+}
