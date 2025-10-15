@@ -1,0 +1,19 @@
+max-history=50
+
+[mode=default]
+anchor=bottom-left
+background-color=#504945FF
+border-color=#504945
+default-timeout=60000
+on-button-left=dismiss
+on-button-right=none
+margin=0
+progress-color=source #d3869b
+max-visible=3
+text-color=#ebdbb2
+width=1920
+icons=1
+markup=1
+
+[mode=do-not-disturb]
+invisible=1

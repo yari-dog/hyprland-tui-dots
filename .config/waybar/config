@@ -1,9 +1,9 @@
 {
     "layer": "top",
     "position": "bottom",
-    "margin-left": 15,
-    "margin-bottom": 15,
-    "margin-right": 15,
+    "margin-left": 0,
+    "margin-bottom": 0,
+    "margin-right": 0,
     "margin-top": 0,
     "modules-left": [
         "hyprland/workspaces",
@@ -16,7 +16,7 @@
         "tray",
         "pulseaudio",
         "pulseaudio#microphone",
-        "custom/updates",
+        "battery",
         "idle_inhibitor",
         "custom/power",
         "clock"
@@ -83,7 +83,7 @@
         "on-click": "~/.config/rofi/menu/powermenu.sh"
     },
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
+        "format": "{volume}% {icon}",
         "tooltip": false,
         "format-muted": " Muted",
         "on-click": "pamixer -t",
@@ -106,7 +106,7 @@
     },
     "pulseaudio#microphone": {
         "format": "{format_source}",
-        "format-source": " {volume}%  ",
+        "format-source": "{volume}%  ",
         "tooltip": false,
         "format-source-muted": " Muted",
         "on-click": "pamixer --default-source -t",
@@ -147,20 +147,22 @@
         }
     },
     "battery": {
-        "bat": "hidpp_battery_0",
-        "interval": 1800,
-        "states": {
-            "warning": 20,
-            "critical": 10
-        },
-        "format": "{icon}",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
-        "max-length": 25
+    "format": "({capacity}% {icon})",
+    // "format-discharging": "{icon}",
+    // "format-charging": "{icon}",
+    "format-plugged": "({capacity}% )",
+    "format-icons": {
+      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+    "format-full": "󰂅",
+    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+    "interval": 5,
+    "on-click": "notify-send 'sybau'",
+    "states": {
+      "warning": 20,
+      "critical": 10
     }
+  },
 }

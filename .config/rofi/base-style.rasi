@@ -45,7 +45,7 @@ window {
     anchor:                      south west;
     fullscreen:                  false;
     width:                       600px;
-    x-offset:                    15px;
+    x-offset:                    0px;
     y-offset:                    32px;
 
     /* properties for all widgets */

@@ -30,7 +30,6 @@ tooltip {
 
 #language,
 #clock,
-#battery,
 #tray,
 #keyboard-state,
 #idle_inhibitor {
@@ -43,8 +42,10 @@ tooltip {
 #cava {
   padding: 5px 15px;
 }
-#custom-updates {
-  padding-right: 15px;
+#battery {
+  padding-left: 10px;
+  padding-right: 5px;
+  background-color: @bg-2;
 }
 
 #custom-power {
@@ -52,7 +53,7 @@ tooltip {
   background-color: @bg-2;
 }
 #idle_inhibitor {
-  padding-left: 15px;
+  padding-left: 10px;
   padding-right: 10px;
   background-color: @bg-2;
 }
