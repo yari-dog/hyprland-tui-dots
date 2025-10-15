@@ -1,0 +1,45 @@
+format = '''$git_branch$git_status$username@$hostname $directory$status$character'''
+
+
+add_newline = false
+
+[status]
+disabled = false
+format = " \\([$status](bold red)\\)"
+
+[git_status]
+conflicted = "x"
+ahead = ">"
+behind = "<"
+diverged = "><"
+untracked = "?‍"
+stashed = "[]"
+modified = "v"
+staged = '[++\($count\)](green)'
+renamed = "R"
+deleted = "D"
+
+
+
+[directory]
+style = "green"
+format = "[$path]($style)"
+
+[username]
+style_user = "green"
+style_root = ""
+format = "[$user]($style)"
+show_always = true
+
+[hostname]
+style = "white"
+ssh_only = false
+format = "[$hostname]($style)"
+
+[character]
+success_symbol = "[>]()"
+error_symbol = "[>](red)"
+
+[git_branch]
+symbol = ""
+format = "\\([$branch](white)\\) "

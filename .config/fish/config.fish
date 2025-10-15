@@ -1,5 +1,3 @@
-source /usr/share/cachyos-fish-config/cachyos-config.fish
-
 function y
 	set tmp (mktemp -t "yazi-cwd.XXXXXX")
 	yazi $argv --cwd-file="$tmp"
@@ -19,10 +17,10 @@ thefuck --alias | source
 
 starship init fish | source
 
-op completion fish | source
+# op completion fish | source
 
 # make fetch look pretty
-alias fastfetch "hyfetch --args='--color-keys 3 --color-title 3'"
+# alias fastfetch "hyfetch --args='--color-keys 3 --color-title 3'"
 
 # replace with swag rust
 alias ls eza
